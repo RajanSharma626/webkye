@@ -253,9 +253,9 @@ include ("includes/conn.php");
           </div>
         </div>
         <div class="row mt-50">
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.3s">
-            <div class="team-member-container gallery-image-hover border-radius-15"> <img
-                src="assets/images/team/team-01.jpg" class="img-responsive" alt="team-01">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.1s">
+            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-01.jpg"
+                class="img-responsive" alt="team-01">
               <div class="member-caption">
                 <div class="member-description text-center">
                   <div class="member-description-wrap">
@@ -264,7 +264,7 @@ include ("includes/conn.php");
                     <ul class="member-icons">
                       <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
                       <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-linkedin"></i></a></li>
+                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -272,9 +272,9 @@ include ("includes/conn.php");
             </div>
           </div>
           <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.4s">
-            <div class="team-member-container gallery-image-hover border-radius-15"> <img
-                src="assets/images/team/team-02.jpg" class="img-responsive" alt="team-02">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.2s">
+            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-02.jpg"
+                class="img-responsive" alt="team-02">
               <div class="member-caption">
                 <div class="member-description text-center">
                   <div class="member-description-wrap">
@@ -283,7 +283,7 @@ include ("includes/conn.php");
                     <ul class="member-icons">
                       <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
                       <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-linkedin"></i></a></li>
+                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -291,9 +291,9 @@ include ("includes/conn.php");
             </div>
           </div>
           <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.5s">
-            <div class="team-member-container gallery-image-hover border-radius-15"> <img
-                src="assets/images/team/team-03.jpg" class="img-responsive" alt="team-03">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.3s">
+            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-03.jpg"
+                class="img-responsive" alt="team-03">
               <div class="member-caption">
                 <div class="member-description text-center">
                   <div class="member-description-wrap">
@@ -302,7 +302,7 @@ include ("includes/conn.php");
                     <ul class="member-icons">
                       <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
                       <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-linkedin"></i></a></li>
+                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -310,9 +310,9 @@ include ("includes/conn.php");
             </div>
           </div>
           <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.6s">
-            <div class="team-member-container gallery-image-hover border-radius-15"> <img
-                src="assets/images/team/team-04.jpg" class="img-responsive" alt="team-04">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.4s">
+            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-04.jpg"
+                class="img-responsive" alt="team-04">
               <div class="member-caption">
                 <div class="member-description text-center">
                   <div class="member-description-wrap">
@@ -321,16 +321,16 @@ include ("includes/conn.php");
                     <ul class="member-icons">
                       <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
                       <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-linkedin"></i></a></li>
+                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.6s">
-            <div class="team-member-container gallery-image-hover border-radius-15"> <img
-                src="assets/images/team/team-04.jpg" class="img-responsive" alt="team-04">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.4s">
+            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-04.jpg"
+                class="img-responsive" alt="team-04">
               <div class="member-caption">
                 <div class="member-description text-center">
                   <div class="member-description-wrap">
@@ -339,7 +339,7 @@ include ("includes/conn.php");
                     <ul class="member-icons">
                       <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
                       <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-linkedin"></i></a></li>
+                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                   </div>
                 </div>
