@@ -75,13 +75,17 @@ if (isset($_GET['url']) && $_GET['url']) {
             if (mysqli_num_rows($testimonial) > 0) {
               $testimonialRow = mysqli_fetch_assoc($testimonial); ?>
               <div class="row-flex flex-center box-shadow pl-10 pr-10 pt-10 pb-10">
-                <div class="col-2 " style="width: 100%;" >
+                <div class="col-2 " style="width: 100%;">
                   <img class="img-circle" src="assets/images/review/<?php echo $testimonialRow['profile'] ?>"
                     alt="<?php echo $testimonialRow['name'] ?>" width="50" />
                 </div>
-                <div class="col-10" style="width: 90%;" >
+                <div class="col-10" style="width: 90%;">
                   <div class="text">
-                    <?php echo $testimonialRow['comment'] ?> fggdfhd dhhdhdhhdgd gd Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ipsam perferendis aperiam non sit reiciendis accusantium ullam saepe repellat obcaecati expedita sint est cum dignissimos, dolorum qui quis velit. Fugit, amet. Id natus tempore ipsam libero quisquam, eveniet nobis mollitia magnam. Modi delectus error veniam, eveniet alias quos fugiat nemo?
+                    <?php echo $testimonialRow['comment'] ?> fggdfhd dhhdhdhhdgd gd Lorem ipsum dolor sit, amet
+                    consectetur adipisicing elit. Assumenda ipsam perferendis aperiam non sit reiciendis accusantium ullam
+                    saepe repellat obcaecati expedita sint est cum dignissimos, dolorum qui quis velit. Fugit, amet. Id
+                    natus tempore ipsam libero quisquam, eveniet nobis mollitia magnam. Modi delectus error veniam,
+                    eveniet alias quos fugiat nemo?
                     </span>
                   </div>
                 </div>

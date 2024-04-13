@@ -90,6 +90,4 @@ include ("includes/conn.php");
 
 </body>
 
-<!-- Mirrored from www.incognitothemes.com/scoda/blog-masonry.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Mar 2024 05:34:26 GMT -->
-
 </html>

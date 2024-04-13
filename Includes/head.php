@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<base href="http://localhost/webkye-main/">
+<base href="http://localhost/webkye/">
 <link rel="stylesheet" href="assets/css/master.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 

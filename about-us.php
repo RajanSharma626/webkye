@@ -115,7 +115,7 @@ include ("includes/conn.php");
   <!--=== What We Do Start ======-->
   <section class="white-bg">
     <div class="col-md-6 col-sm-4 bg-flex bg-flex-left">
-      <div class="bg-flex-holder bg-flex-cover" style="background-image: url(assets/images/meeting.jpg);">
+      <div class="bg-flex-holder bg-flex-cover" style="background-image: url(assets/images/team/team-work.jpg);">
       </div>
     </div>
     <div class="container">
@@ -376,12 +376,12 @@ include ("includes/conn.php");
         </div>
       </div>
       <div class=" text-center font-30px pb-20">
-          <a href="https://api.whatsapp.com/send?phone=8468027626" target="_blank" class="mr-10 ml-10"><i
-              class="icofont-brand-whatsapp"></i></a>
-          <a href="https://www.linkedin.com/company/webkye/" target="_blank" class="mr-10 ml-10"><i
-              class="icofont-linkedin"></i></a>
-          <a href="mailto:info.webkye@gmail.com" target="_blank" class="mr-10 ml-10"><i class="bi bi-envelope"></i></a>
-        </div>
+        <a href="https://api.whatsapp.com/send?phone=8468027626" target="_blank" class="mr-10 ml-10"><i
+            class="icofont-brand-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/webkye/" target="_blank" class="mr-10 ml-10"><i
+            class="icofont-linkedin"></i></a>
+        <a href="mailto:info.webkye@gmail.com" target="_blank" class="mr-10 ml-10"><i class="bi bi-envelope"></i></a>
+      </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <form id="contact-form" name="contact-form">
