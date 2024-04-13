@@ -1,3 +1,6 @@
+<?php
+include ("includes/conn.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,136 +29,53 @@
     <!--=== Portfolio Start ======-->
     <section class="pt-100 pt-100">
       <div class="container">
-      <div class="row">
-        <div class="col-sm-8 section-heading">
-          <h2 class="text-uppercase wow fadeTop" data-wow-delay="0.1s">Our Portfolio</h2>
-          <h4 class="text-uppercase wow fadeTop" data-wow-delay="0.2s">- our recent works -</h4>
+        <div class="row">
+          <div class="col-sm-8 section-heading">
+            <h2 class="text-uppercase wow fadeTop" data-wow-delay="0.1s">Our Portfolio</h2>
+            <h4 class="text-uppercase wow fadeTop" data-wow-delay="0.2s">- our recent works -</h4>
+          </div>
         </div>
-      </div>
         <div class="row mt-30">
           <div class="portfolio-container text-center">
             <ul id="portfolio-filter" class="list-inline filter-transparent">
               <li class="active" data-group="all">All</li>
-              <li data-group="design">Design</li>
-              <li data-group="web">Web</li>
-              <li data-group="branding">Branding</li>
-              <li data-group="print">Print</li>
+              <li data-group="website">Websites</li>
+              <li data-group="graphic">Graphics</li>
+              <li data-group="Videos">Videos</li>
+              <li data-group="UI/UX">UI/UX</li>
             </ul>
             <ul id="portfolio-grid" class="three-column hover-two">
-              <li class="portfolio-item gutter-space" data-groups='["all", "print", "branding"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/1.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Business Cards</h3>
-                      <a href="single-portfolio.html" class="links">Print Design</a>
+              <?php
+              $sql = mysqli_query($conn, "SELECT * FROM `project` ORDER BY `id` DESC");
+              while ($row = mysqli_fetch_assoc($sql)) {
+
+                $class = ($row['cat'] == "Videos") ? "popup-youtube" : "alpha-lightbox";
+
+                $path = ($row['cat'] == "Videos") ? $row['url'] : "assets/images/portfolio/" . $row['cover'];
+                ?>
+                <li class="portfolio-item gutter-space" data-groups='["all", "<?php echo $row['cat'] ?>"]'>
+                  <div class="portfolio">
+                    <div class="dark-overlay"></div>
+                    <img src="assets/images/portfolio/<?php echo $row['cover'] ?>" alt="<?php echo $row['alt_text'] ?>">
+                    <div class="portfolio-wrap">
+                      <div class="portfolio-description">
+                        <h3 class="portfolio-title"><?php echo $row['title'] ?></h3>
+                        <a href="portfolio-detail?id=<?php echo $row['id'] ?>"
+                          class="links"><?php echo $row['subtitle'] ?></a>
+                      </div>
+                      <!--=== /.project-info ===-->
+                      <ul class="portfolio-details">
+                        <li><a class="<?php echo $class ?> btn btn-success btn-sm font-18px" href="<?php echo $path ?>">
+                            <i class="icofont-eye-alt"></i>
+                          </a></li>
+                        <li><a href="portfolio-detail?id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm"><i
+                              class="icofont icofont-link-alt"></i></a></li>
+                      </ul>
                     </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/1.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
                   </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
-              <li class="portfolio-item gutter-space" data-groups='["all", "print", "branding"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/2.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Magazine</h3>
-                      <a href="single-portfolio.html" class="links">Branding</a>
-                    </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/2.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
-              <li class="portfolio-item gutter-space" data-groups='["all", "branding"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/3.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Rabycad CD Design</h3>
-                      <a href="single-portfolio.html" class="links">Branding</a>
-                    </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/3.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
-              <li class="portfolio-item gutter-space" data-groups='["all", "print", "design"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/4.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Micro Chips</h3>
-                      <a href="single-portfolio.html" class="links">Web Design</a>
-                    </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/4.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
-              <li class="portfolio-item gutter-space" data-groups='["all", "print", "web"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/5.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Flat Web Design</h3>
-                      <a href="single-portfolio.html" class="links">Web Design</a>
-                    </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/5.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
-              <li class="portfolio-item gutter-space" data-groups='["all", "design"]'>
-                <div class="portfolio">
-                  <div class="dark-overlay"></div>
-                  <img src="assets/images/portfolio/grid/6.jpg" alt="">
-                  <div class="portfolio-wrap">
-                    <div class="portfolio-description">
-                      <h3 class="portfolio-title">Flyer Design</h3>
-                      <a href="single-portfolio.html" class="links">Print Design</a>
-                    </div>
-                    <!--=== /.project-info ===-->
-                    <ul class="portfolio-details">
-                      <li><a class="alpha-lightbox" href="assets/images/portfolio/grid/6.jpg"><i
-                            class="icofont icofont-search-1"></i></a></li>
-                      <li><a href="single-portfolio.html"><i class="icofont icofont-link-alt"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!--=== /.portfolio ===-->
-              </li>
+                  <!--=== /.portfolio ===-->
+                </li>
+              <?php } ?>
             </ul>
           </div>
         </div>
@@ -200,7 +120,7 @@
 
   <!--=== Javascript Plugins ======-->
   <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/validator.js"></script>
+  <!-- <script src="assets/js/validator.js"></script> -->
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/master.js"></script>
   <script src="assets/js/bootsnav.js"></script>

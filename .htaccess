@@ -1,6 +1,6 @@
 
 RewriteEngine On
-RewriteBase /webkye/
+RewriteBase /webkye-main/
 
 # Exclude CSS files from rewriting
 RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|)$ [NC]

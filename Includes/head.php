@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
 <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
 <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
 <!-- FavIcon -->

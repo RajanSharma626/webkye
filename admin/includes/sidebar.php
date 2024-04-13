@@ -59,6 +59,14 @@
                     <a href="reviews" class="nav-link menu-link"><i class="bi bi-star"></i> <span
                             data-key="t-reviews-ratings">Reviews</span></a>
                 </li>
+                <li class="nav-item">
+                    <a href="projects" class="nav-link menu-link"><i class="bi bi-boxes"></i> <span
+                            data-key="t-reviews-ratings">Projects</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs" class="nav-link menu-link"><i class="bi bi-pencil-fill"></i> <span
+                            data-key="t-reviews-ratings">Blogs</span></a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarOrders" data-bs-toggle="collapse" role="button"

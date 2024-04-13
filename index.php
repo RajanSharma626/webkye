@@ -127,7 +127,9 @@ include ("includes/conn.php");
           </div>
           <div class="col-md-6">
             <div class="about-img">
-              <img class="img-responsive" src="assets/images/about-us.png" alt="">
+              <a class="popup-youtube" href="https://www.youtube.com/embed/KBT2gmAfav4?si=XbJxP5bb3dbi9F0n">
+                <img class="img-responsive" src="assets/images/about-us.png" alt="">
+              </a>
             </div>
           </div>
         </div>
@@ -162,76 +164,24 @@ include ("includes/conn.php");
             <div class="portfolio-style-two">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="work-item-wrap">
-                      <div class="work-item-thumbnail">
-                        <a href="single-portfolio.html">
-                          <img src="assets/images/portfolio/grid/25.jpg" alt="25" />
-                        </a>
-                      </div>
-                      <div class="work-item-info">
-                        <h3 class="josefin-font">Why Good Designers Are Like Crocodiles</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium efficitur ex, vitae
-                          euismod ligula.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="work-item-wrap">
-                      <div class="work-item-thumbnail">
-                        <a href="single-portfolio.html">
-                          <img src="assets/images/portfolio/grid/26.jpg" alt="26" />
-                        </a>
-                      </div>
-                      <div class="work-item-info">
-                        <h3 class="josefin-font">How Metallics Became Basic</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium efficitur ex, vitae
-                          euismod ligula.</p>
+                  <?php
+                  $portfolio = mysqli_query($conn, "SELECT * FROM `project` ORDER BY `id` DESC");
+                  while ($row = mysqli_fetch_assoc($portfolio)) {
+                    ?>
+                    <div class="swiper-slide">
+                      <div class="work-item-wrap">
+                        <div class="work-item-thumbnail">
+                          <a href="single-portfolio.html">
+                            <img src="assets/images/portfolio/<?php echo $row['cover'] ?>" alt="25" />
+                          </a>
+                        </div>
+                        <div class="work-item-info">
+                          <h3 class="josefin-font"><?php echo $row['title'] ?></h3>
+                          <p><?php echo $row['short_desc'] ?></p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="work-item-wrap">
-                      <div class="work-item-thumbnail">
-                        <a href="single-portfolio.html">
-                          <img src="assets/images/portfolio/grid/27.jpg" alt="27" />
-                        </a>
-                      </div>
-                      <div class="work-item-info">
-                        <h3 class="josefin-font">Designing The Envato Design Framework</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium efficitur ex, vitae
-                          euismod ligula.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="work-item-wrap">
-                      <div class="work-item-thumbnail">
-                        <a href="single-portfolio.html">
-                          <img src="assets/images/portfolio/grid/28.jpg" alt="28" />
-                        </a>
-                      </div>
-                      <div class="work-item-info">
-                        <h3 class="josefin-font">The Rules of Designing UX for Millennials</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium efficitur ex, vitae
-                          euismod ligula.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="work-item-wrap">
-                      <div class="work-item-thumbnail">
-                        <a href="single-portfolio.html">
-                          <img src="assets/images/portfolio/grid/29.jpg" alt="29" />
-                        </a>
-                      </div>
-                      <div class="work-item-info">
-                        <h3 class="josefin-font">Best Relaxing ASMR Sounds</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium efficitur ex, vitae
-                          euismod ligula.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <?php } ?>
                 </div>
 
               </div>
@@ -253,99 +203,24 @@ include ("includes/conn.php");
           </div>
         </div>
         <div class="row mt-50">
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.1s">
-            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-01.jpg"
-                class="img-responsive" alt="team-01">
-              <div class="member-caption">
-                <div class="member-description text-center">
-                  <div class="member-description-wrap">
-                    <h4 class="member-title">Randy Bell</h4>
-                    <p class="member-subtitle">UI/UX Designer</p>
-                    <ul class="member-icons">
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
+          <?php
+          $team = mysqli_query($conn, "SELECT * FROM `team` ORDER BY `rank` ASC");
+          while ($row = mysqli_fetch_assoc($team)) {
+            ?>
+            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.1s">
+              <div class="team-member-container gallery-image-hover border-radius-10"> <img
+                  src="assets/images/team/<?php echo $row['profile'] ?>" class="img-responsive" alt="team-01">
+                <div class="member-caption">
+                  <div class="member-description text-center">
+                    <div class="member-description-wrap">
+                      <h4 class="member-title"><?php echo $row['name'] ?></h4>
+                      <p class="member-subtitle"><?php echo $row['designation'] ?></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.2s">
-            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-02.jpg"
-                class="img-responsive" alt="team-02">
-              <div class="member-caption">
-                <div class="member-description text-center">
-                  <div class="member-description-wrap">
-                    <h4 class="member-title">Alice Andrews</h4>
-                    <p class="member-subtitle">Photographer</p>
-                    <ul class="member-icons">
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.3s">
-            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-03.jpg"
-                class="img-responsive" alt="team-03">
-              <div class="member-caption">
-                <div class="member-description text-center">
-                  <div class="member-description-wrap">
-                    <h4 class="member-title">Nicholas Hart</h4>
-                    <p class="member-subtitle">Web Developer</p>
-                    <ul class="member-icons">
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--=== Member End ===-->
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop mb-10" data-wow-delay="0.4s">
-            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-04.jpg"
-                class="img-responsive" alt="team-04">
-              <div class="member-caption">
-                <div class="member-description text-center">
-                  <div class="member-description-wrap">
-                    <h4 class="member-title">Grace Ross</h4>
-                    <p class="member-subtitle">CEO/Founder</p>
-                    <ul class="member-icons">
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeTop" data-wow-delay="0.4s">
-            <div class="team-member-container gallery-image-hover border-radius-10"> <img src="assets/images/team/team-04.jpg"
-                class="img-responsive" alt="team-04">
-              <div class="member-caption">
-                <div class="member-description text-center">
-                  <div class="member-description-wrap">
-                    <h4 class="member-title">Grace Ross</h4>
-                    <p class="member-subtitle">CEO/Founder</p>
-                    <ul class="member-icons">
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                      <li class="social-icon"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
           <!--=== Member End ===-->
         </div>
       </div>
@@ -423,6 +298,13 @@ include ("includes/conn.php");
               website
               traffic, brand awareness, or conversions. Let's grow your business together!</p>
           </div>
+        </div>
+        <div class=" text-center font-30px pb-20">
+          <a href="https://api.whatsapp.com/send?phone=8468027626" target="_blank" class="mr-10 ml-10"><i
+              class="icofont-brand-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/company/webkye/" target="_blank" class="mr-10 ml-10"><i
+              class="icofont-linkedin"></i></a>
+          <a href="mailto:info.webkye@gmail.com" target="_blank" class="mr-10 ml-10"><i class="bi bi-envelope"></i></a>
         </div>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
