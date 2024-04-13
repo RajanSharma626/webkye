@@ -115,7 +115,7 @@ include ("includes/conn.php");
   <!--=== What We Do Start ======-->
   <section class="white-bg">
     <div class="col-md-6 col-sm-4 bg-flex bg-flex-left">
-      <div class="bg-flex-holder bg-flex-cover" style="background-image: url(assets/images/onepage-bg-left.jpg);">
+      <div class="bg-flex-holder bg-flex-cover" style="background-image: url(assets/images/meeting.jpg);">
       </div>
     </div>
     <div class="container">
@@ -225,45 +225,6 @@ include ("includes/conn.php");
   </section>
   <!--=== Our Team End ======-->
 
-  <!--=== Testimonails Start ===-->
-  <!-- <section class="parallax-bg-18 fixed-bg" data-stellar-background-ratio="0.2">
-    <div class="overlay-bg"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 section-heading white-color">
-          <h2 class="wow fadeTop" data-wow-delay="0.1s">Testimonials</h2>
-          <h4 class="text-uppercase wow fadeTop" data-wow-delay="0.2s">- Happy Clients -</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="slick testimonial">
-            <?php
-            $testimonial = mysqli_query($conn, "SELECT * FROM `testimonials` ORDER BY `timestamp` DESC");
-
-            while ($row = mysqli_fetch_assoc($testimonial)) {
-              ?>
-              <div class="testimonial-item">
-                <div class="testimonial-content"> <img class="img-responsive img-circle"
-                    src="assets/images/review/<?php echo $row['profile'] ?>" alt="avatar-1" />
-                  <h5>
-                    <?php echo $row['name'] ?>
-                  </h5>
-                  <p>
-                    <?php echo $row['designation'] ?>
-                  </p>
-                  <h4>
-                    <?php echo $row['comment'] ?>
-                  </h4>
-                </div>
-              </div>
-            <?php } ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!--=== Testimonails End ===-->
 
   <!--=== Pricing Start ======-->
   <!-- <section id="pricing">
@@ -371,7 +332,7 @@ include ("includes/conn.php");
                     <div class="info">
                       <div class="image" style="position:relative;">
                         <img class="img-responsive img-circle" src="assets/images/review/<?php echo $row['profile'] ?>"
-                          alt="avatar-1" />
+                          alt="<?php echo $row['name'] ?>" />
                         <img src="assets/images/review/<?php echo $row['country'] ?>" alt="country_flag"
                           style="position: absolute; bottom: -30px;right: 0; width: 30px;">
                       </div>

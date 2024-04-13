@@ -1,4 +1,3 @@
-
 <footer class="footer" id="footer-fixed">
     <div class="footer-main">
         <div class="container">
@@ -30,7 +29,7 @@
                         <ul>
                             <li><a href="home">Home</a></li>
                             <li><a href="about-us">About Us</a></li>
-                            <li><a href="portfolio">Portfolio</a></li>
+                            <li><a href="portfolios">Portfolio</a></li>
                             <li><a href="services">Our Services</a></li>
                             <li><a href="contact-us">Contact Us</a></li>
                             <li><a href="testimonials">Testimonials</a></li>
@@ -54,8 +53,9 @@
                         <ul>
                             <li> <i class="icofont icofont-google-map"></i> <a href="#">New Delhi, India</a>
                             </li>
-                            <li> <i class="icofont icofont-iphone"></i> <a href="#">+91 8468027626</a> </li>
-                            <li> <i class="icofont icofont-mail"></i> <a href="mailto:info@webkye.in">info@webkye.in</a>
+                            <li> <i class="icofont-brand-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=8468027626">+91 8468027626</a> </li>
+                            <li> <i class="icofont icofont-mail"></i> <a
+                                    href="mailto:info.webkye@gmail.com">info.webkye@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -68,10 +68,12 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <ul class="social-media">
+                        <li><a href="https://api.whatsapp.com/send?phone=8468027626" target="_blank"
+                                class="icofont-brand-whatsapp"></a></li>
                         <li><a href="https://www.linkedin.com/company/webkye/" target="_blank"
                                 class="icofont icofont-linkedin"></a></li>
                         <li><a href="https://www.facebook.com/people/WebKye/61557336916217/?mibextid=ZbWKwL"
-                                target="_blank" class="icofont icofont-facebook"></a></li>
+                                target="_blank" class="bi bi-facebook"></a></li>
                         <!-- <li><a href="#" class="icofont icofont-twitter"></a></li>
                 <li><a href="#" class="icofont icofont-pinterest"></a></li> -->
                         <li><a href="https://www.instagram.com/webkye.in/" target="_blank"

@@ -23,7 +23,7 @@
                                 <li class="nav-link ml-10"> <a href="services" class="dropdown-toggle"
                                                 data-toggle="dropdown">Service</a>
                                 </li>
-                                <li class="nav-link ml-10"><a href="portfolio" class="dropdown-toggle"
+                                <li class="nav-link ml-10"><a href="portfolios" class="dropdown-toggle"
                                                 data-toggle="dropdown">Portfolio</a>
                                 <li class="nav-link ml-10"> <a href="blogs" class="dropdown-toggle"
                                                 data-toggle="dropdown">Blog</a>

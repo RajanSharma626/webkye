@@ -8,6 +8,7 @@ $name = "";
 $review = "";
 $designation = "";
 $flag = "";
+$project = "";
 
 
 if (isset($_GET['id']) && $_GET['id'] != "") {
@@ -23,6 +24,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
         $review = $row['comment'];
         $designation = $row['designation'];
         $flag = $row['country'];
+        $project = $row['project'];
     }
 }
 
@@ -34,10 +36,11 @@ if (isset($_POST["addReview"]) && $_POST["addReview"] != '') {
     $name = get_safe_value($conn, $_POST['name']);
     $review = get_safe_value($conn, $_POST['review']);
     $designation = get_safe_value($conn, $_POST['designation']);
+    $project = get_safe_value($conn, $_POST['project']);
 
     move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/images/review/" . $profile);
     move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/images/review/" . $flag);
-    $sql = mysqli_query($conn, "INSERT INTO `testimonials`(`name`, `designation`, `profile`, `country`, `comment`) VALUES ('$name','$designation','$profile','$flag','$review')");
+    $sql = mysqli_query($conn, "INSERT INTO `testimonials`(`name`, `designation`, `profile`, `country`, `comment`,`project`) VALUES ('$name','$designation','$profile','$flag','$review', '$project')");
 
     if ($sql) {
         header("Location: reviews.php");
@@ -52,13 +55,14 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
     $name = get_safe_value($conn, $_POST['name']);
     $review = get_safe_value($conn, $_POST['review']);
     $designation = get_safe_value($conn, $_POST['designation']);
+    $project = get_safe_value($conn, $_POST['project']);
 
     if ($_FILES['profile']['name'] != '' && $_FILES['flag']['name'] != '') {
 
         move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/images/review/" . $profile);
         move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/images/review/" . $flag);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`country`='$flag ',`comment`='$review' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews.php");
@@ -67,7 +71,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
 
         move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/images/review/" . $flag);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`country`='$flag ',`comment`='$review' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews.php");
@@ -75,14 +79,14 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
     } elseif ($_FILES['profile']['name'] != '' && $_FILES['flag']['name'] == '') {
         move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/images/review/" . $profile);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`comment`='$review' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews.php");
         }
     } else {
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`comment`='$review' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews.php");
@@ -209,6 +213,20 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                                 <img src="../assets/images/review/<?php echo $flag; ?>" class="mt-2" alt=""
                                                     width="50px">
                                             <?php } ?>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="service-icon-input">Project</label>
+                                            <select name="project" class="form-control">
+                                                <option value="" selected disable>- Select -</option>
+                                                <?php
+                                                $projectsql = mysqli_query($conn, "SELECT * FROM `project` ORDER BY `id` DESC");
+                                                while ($projectRow = mysqli_fetch_assoc($projectsql)) {
+                                                    ?>
+                                                    <option value="<?php echo $projectRow['id'] ?>" <?php echo ($project == $projectRow['id']) ? "selected" : ""; ?>>
+                                                        <?php echo $projectRow['title'] ?></option>
+                                                <?php } ?>
+                                            </select>
+
                                         </div>
 
                                     </div>
