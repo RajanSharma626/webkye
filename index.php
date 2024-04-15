@@ -40,12 +40,12 @@ include ("includes/conn.php");
                       class="font-600">Reach, Engage, Succeed!</span></h2>
                   <p class="mt-30 wow fadeInUp lead" data-wow-delay="0.3s">Unlock the Power of Digital Marketing to
                     Reach Your Audience Like Never Before!</p>
-                  <p class="text-left mt-30 wow fadeInUp app-btns" data-wow-delay="0.4s"><a
-                     href="contact-us" class="btn btn-dark btn-circle">Let's Start!</a></p>
+                  <p class="text-left mt-30 wow fadeInUp app-btns" data-wow-delay="0.4s"><a href="contact-us"
+                      class="btn btn-dark btn-circle">Let's Start!</a></p>
                 </div>
                 <div class="col-md-6 mt-80 mt-sm-0 mt-md-0 col-sm-12">
                   <div class="banner-img">
-                    <img class="img-responsive" src="assets/images/slides/home-bg-35.jpg" alt="" />
+                    <img class="img-responsive" src="assets/images/home-bg-35.jpg" alt="" />
                   </div>
                 </div>
               </div>

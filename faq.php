@@ -61,26 +61,19 @@ include ("includes/conn.php");
                         href="#collapse<?php echo $no ?>">
                         <?php echo $row['question'] ?> </a></h3>
                   </div>
-                  <div id="collapse<?php echo $no ?>"
-                    class="panel-collapse collapse <?php if ($no == 1)
-                      echo 'in';
-                    else
-                      echo ''; ?>">
+                  <div id="collapse<?php echo $no ?>" class="panel-collapse collapse <?php if ($no == 1)
+                       echo 'in';
+                     else
+                       echo ''; ?>">
                     <div class="panel-body"> <?php echo $row['answer'] ?> </div>
                   </div>
                 </div>
                 <?php $no++;
               } ?>
-
             </div>
           </div>
           <div class="col-sm-4">
-            <form class="search-form" method="get">
-              <input type="text" name="name" class="form-control search-field" id="search"
-                placeholder="Type what it's your mind...">
-              <button type="submit" class="icofont icofont-search-1 search-submit"></button>
-            </form>
-            <div class="banner-box help-bg mt-30">
+            <div class="banner-box help-bg">
               <div class="red-overlay-bg"></div>
               <div class="relative white-color text-center">
                 <h4 class="text-uppercase">We're Here to Help!</h4>

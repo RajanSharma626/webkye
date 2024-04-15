@@ -31,8 +31,7 @@
                             <li><a href="about-us">About Us</a></li>
                             <li><a href="portfolios">Portfolio</a></li>
                             <li><a href="services">Our Services</a></li>
-                            <li><a href="contact-us">Contact Us</a></li>
-                            <li><a href="testimonials">Testimonials</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -40,10 +39,11 @@
                     <div class="widget widget-links">
                         <h5 class="widget-title">Support</h5>
                         <ul>
+                            <li><a href="contact-us">Contact Us</a></li>
                             <li><a href="faq">FAQ</a></li>
                             <li><a href="Blogs">Our Blogs</a></li>
-                            <li><a href="term-condition.html">Terms &amp; Conditions</a></li>
-                            <li><a href="career.html">Careers</a></li>
+                            <!-- <li><a href="term-condition.html">Terms &amp; Conditions</a></li>
+                            <li><a href="career.html">Careers</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,8 @@
                         <ul>
                             <li> <i class="icofont icofont-google-map"></i> <a href="#">New Delhi, India</a>
                             </li>
-                            <li> <i class="icofont-brand-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=8468027626">+91 8468027626</a> </li>
+                            <li> <i class="icofont-brand-whatsapp"></i> <a
+                                    href="https://api.whatsapp.com/send?phone=8468027626">+91 8468027626</a> </li>
                             <li> <i class="icofont icofont-mail"></i> <a
                                     href="mailto:info.webkye@gmail.com">info.webkye@gmail.com</a>
                             </li>
