@@ -1,6 +1,6 @@
 
 RewriteEngine On
-RewriteBase /webkye/
+RewriteBase /webkye-main/
 
 # Exclude CSS files from rewriting
 RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|)$ [NC]
@@ -18,7 +18,7 @@ RewriteRule ^home$ /index.php [L]
 
 # Pass parameters in a clean way
 RewriteRule ^portfolio/([^/]+)/?$ portfolio-detail.php?url=$1 [L]
-#RewriteRule ^create-cover-letter/([^/]+)/?$ create_cover.php?temp=$1 [L]
+RewriteRule ^blog/([^/]+)/?$ blog-detail.php?url=$1 [L]
 #RewriteRule ^create-resume/([^/]+)/?$ create_resume.php?temp=$1 [L]
 
 #RewriteRule ^education-details/([^/]+)/([^/]+)/?$ education.php?temp=$1&id=$2 [L]

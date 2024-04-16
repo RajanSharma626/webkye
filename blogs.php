@@ -45,7 +45,7 @@ include ("includes/conn.php");
               <div class="col-xs-12 col-sm-6 col-md-4 blog-masonry-item">
                 <div class="post">
                   <div class="post-img"> <img class="img-responsive" src="assets/images/post/<?php echo $row['cover'] ?>"
-                      alt="" /> </div>
+                      alt="<?php echo $row['cover_alt_text'] ?>" /> </div>
                   <div class="post-info">
                     <h3><a href="blog-grid.html"><?php echo $row['title'] ?></a></h3>
                     <h6><?php

@@ -167,26 +167,26 @@ include ("includes/conn.php");
           <h4 class="text-uppercase wow fadeTop" data-wow-delay="0.2s">- Design your presence -</h4>
         </div>
       </div>
-      <div class="row mt-50 service-style-one">
+      <div class="row row-flex mt-50 service-style-one">
 
-        <?php
-        $services = mysqli_query($conn, "SELECT * FROM `services`");
-        while ($row = mysqli_fetch_assoc($services)) {
-          ?>
-          <div class="col-md-4 text-center wow fadeTop mb-10" data-wow-delay="0.1s">
-            <div class="feature-box">
-              <i class="<?php echo $row['icon'] ?> font-50px gradient-color"></i>
-              <h3>
-                <?php echo $row['heading'] ?>
-              </h3>
-              <p>
-                <?php echo $row['description'] ?>
-              </p>
+          <?php
+          $services = mysqli_query($conn, "SELECT * FROM `services`");
+          while ($row = mysqli_fetch_assoc($services)) {
+            ?>
+            <div class="col-md-4 text-center mb-10" data-wow-delay="0.1s">
+              <div class="feature-box">
+                <i class="<?php echo $row['icon'] ?> font-50px gradient-color"></i>
+                <h3>
+                  <?php echo $row['heading'] ?>
+                </h3>
+                <p>
+                  <?php echo $row['description'] ?>
+                </p>
+              </div>
             </div>
-          </div>
-        <?php } ?>
+          <?php } ?>
 
-      </div>
+        </div>
     </div>
   </section>
   <!--=== Our Services End ======-->

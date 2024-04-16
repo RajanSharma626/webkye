@@ -25,6 +25,25 @@ if (isset($_GET['url']) && $_GET['url']) {
 
   <title>Portfolio Detail - Webkye</title>
   <?php include ("includes/head.php") ?>
+
+  <style>
+    .reviewCard {
+      width: 60%;
+    }
+
+    .tags-section .tags {
+      background-color: #cfd8dc;
+      padding: 5px;
+      border-radius: 2px;
+      margin: 5px;
+    }
+
+    @media screen And (max-width : 600px) {
+      .reviewCard {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -69,29 +88,28 @@ if (isset($_GET['url']) && $_GET['url']) {
 
             <p class="mt-20"><?php echo $row['long_desc'] ?></p>
 
-
-            <?php
-            $testimonial = mysqli_query($conn, "SELECT * FROM `testimonials` WHERE `project` = '$projectID'");
-            if (mysqli_num_rows($testimonial) > 0) {
-              $testimonialRow = mysqli_fetch_assoc($testimonial); ?>
-              <div class="row-flex flex-center box-shadow pl-10 pr-10 pt-10 pb-10">
-                <div class="col-2 " style="width: 100%;">
-                  <img class="img-circle" src="assets/images/review/<?php echo $testimonialRow['profile'] ?>"
-                    alt="<?php echo $testimonialRow['name'] ?>" width="50" />
-                </div>
-                <div class="col-10" style="width: 90%;">
-                  <div class="text">
-                    <?php echo $testimonialRow['comment'] ?> fggdfhd dhhdhdhhdgd gd Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Assumenda ipsam perferendis aperiam non sit reiciendis accusantium ullam
-                    saepe repellat obcaecati expedita sint est cum dignissimos, dolorum qui quis velit. Fugit, amet. Id
-                    natus tempore ipsam libero quisquam, eveniet nobis mollitia magnam. Modi delectus error veniam,
-                    eveniet alias quos fugiat nemo?
-                    </span>
+            <div class="reviewCard">
+              <?php
+              $testimonial = mysqli_query($conn, "SELECT * FROM `testimonials` WHERE `project` = '$projectID'");
+              if (mysqli_num_rows($testimonial) > 0) {
+                $testimonialRow = mysqli_fetch_assoc($testimonial); ?>
+                <div class="row-flex flex-center box-shadow pl-10 pr-10 pt-10 pb-10">
+                  <div class="col-2" style="width: 100%;">
+                    <img class="img-circle" src="assets/images/review/<?php echo $testimonialRow['profile'] ?>"
+                      alt="<?php echo $testimonialRow['name'] ?>" width="50" style="margin: auto;" />
+                  </div>
+                  <div class="col-10">
+                    <div class="text text-center pb-30 pt-30 pl-30 pr-30">
+                    <i class="icofont icofont-quote-left font-20px default-color mt-20 mr-10"></i><span>
+                      <?php echo $testimonialRow['comment'] ?>
+                      </span> &nbsp;
+                      <i class="icofont icofont-quote-right font-20px default-color mt-20 mr-10"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-            <?php } ?>
+              <?php } ?>
+            </div>
 
 
             <p class="mt-50"><a class="btn btn-color btn-rounded">Start a Project</a></p>
@@ -138,6 +156,22 @@ if (isset($_GET['url']) && $_GET['url']) {
               <li><i class="icofont icofont-light-bulb"></i>Development</li>
               <li><i class="icofont icofont-layers"></i>Apps</li>
             </ul> -->
+
+            <div class="tags-section mt-30">
+              <h5 class="mb-10">Related Tags :</h5>
+              <div class="row-flex">
+
+                <?php
+                $tags = unserialize($row['tags']);
+
+                foreach($tags as $tag){
+                ?>
+                <div class="tags">
+                  <?php echo $tag ?>
+                </div>
+                <?php } ?>
+              </div>
+            </div>
 
           </div>
           <!--=== Right Side End ===-->

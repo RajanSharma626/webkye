@@ -68,13 +68,13 @@ include ("includes/conn.php");
                 class="text-dark">WebKye</span></h4>
           </div>
         </div>
-        <div class="row mt-50 service-style-one">
+        <div class="row row-flex mt-50 service-style-one">
 
           <?php
           $services = mysqli_query($conn, "SELECT * FROM `services`");
           while ($row = mysqli_fetch_assoc($services)) {
             ?>
-            <div class="col-md-4 text-center wow fadeTop mb-10" data-wow-delay="0.1s">
+            <div class="col-md-4 text-center mb-10" data-wow-delay="0.1s">
               <div class="feature-box">
                 <i class="<?php echo $row['icon'] ?> font-50px gradient-color"></i>
                 <h3>
@@ -113,21 +113,21 @@ include ("includes/conn.php");
                   content writing, social media marketing, and optimization,</b> we're your go-to team for online
                 success.</p>
               <p>
-                What makes us stand out? We're a group of creative teenagers who love thinking outside the box and
-                delivering top-notch results. Let's team up and take your brand to new heights in the digital
-                realm!
+                What makes us stand out? We're a crew of creative teens who are obsessed with pushing boundaries and
+                crushing it online. We're all about fresh ideas and killer results. Wanna join forces and skyrocket your
+                brand in the digital world? We got this!
               </p>
             </div>
 
             <div class="row">
               <div class="col-md-12">
-                <a href="#" class="btn btn-color btn-circle wow fadeTop" data-wow-delay="0.3s">Read More</a>
+                <a href="about-us" class="btn btn-color btn-circle wow fadeTop" data-wow-delay="0.3s">Read More</a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="about-img">
-              <a class="popup-youtube" href="https://www.youtube.com/embed/KBT2gmAfav4?si=XbJxP5bb3dbi9F0n">
+              <a class="popup-youtube" href="assets/images/video/about.mp4">
                 <img class="img-responsive" src="assets/images/about-us.png" alt="">
               </a>
             </div>
@@ -171,7 +171,7 @@ include ("includes/conn.php");
                     <div class="swiper-slide">
                       <div class="work-item-wrap">
                         <div class="work-item-thumbnail">
-                          <a href="single-portfolio.html">
+                          <a href="portfolio/<?php echo $row['seo_url'] ?>">
                             <img src="assets/images/portfolio/<?php echo $row['cover'] ?>" alt="25" />
                           </a>
                         </div>
@@ -274,6 +274,7 @@ include ("includes/conn.php");
                           <i class="icofont icofont-quote-left font-20px default-color mt-20 mr-10"></i><span>
                             <?php echo $row['comment'] ?>
                           </span>
+
                         </div>
                       </div>
                     </div>
